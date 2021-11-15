@@ -36,7 +36,7 @@
 
 # Set the base image to Oracle Linux 8
 #FROM oraclelinux:8-slim
-FROM oraclelinux:8
+FROM oraclelinux:8 as builder
 
 # File Author / Maintainer
 # Use LABEL rather than deprecated MAINTAINER
@@ -76,6 +76,8 @@ ENV ORACLE_SID=cdb1                                                            \
 # Get all the files for the build.
 COPY software/* ${SOFTWARE_DIR}/
 COPY scripts/* ${SCRIPTS_DIR}/
+
+
 
 # ------------------------------------------------------------------------------
 # Unpack all the software and remove the media.
@@ -146,6 +148,43 @@ RUN mkdir -p /py3-ex                                                        && \
     cd /py3-ex/Python-3.9.5/                                                && \
     sh ${SCRIPTS_DIR}/install_oml4py_server.sh                              && \
     rm -rf /py3-ex
+
+FROM oraclelinux:8-slim
+COPY --from=builder ["/", "/"]
+
+# File Author / Maintainer
+# Use LABEL rather than deprecated MAINTAINER
+# MAINTAINER Tim Hall (tim@oracle-base.com) and Darkthena (darkathena@qq.com)
+LABEL maintainer="tim@oracle-base.com"
+
+# ------------------------------------------------------------------------------
+# Define fixed (build time) environment variables.
+ENV ORACLE_BASE=/u01/app/oracle                                                \
+    ORACLE_HOME=/u01/app/oracle/product/21.0.0/dbhome_1                        \
+    READONLY_HOME=/u01/app/oracle/homes/OraDB21Home1                           \
+    ORA_INVENTORY=/u01/app/oraInventory                                        \
+    SOFTWARE_DIR=/u01/software                                                 \
+    DB_SOFTWARE="LINUX.X64_213000_db_home.zip"                                 \
+    APEX_SOFTWARE="apex_21.2_en.zip"                                           \
+    ORACLE_PASSWORD="oracle"                                                   \
+    SCRIPTS_DIR=/u01/scripts                                                   \
+    ORAENV_ASK=NO                                                              \
+    PYTHON_SOFTWARE="Python-3.9.5.tgz"
+
+# Separate ENV call to allow existing variables to be referenced.
+ENV PATH=${ORACLE_HOME}/bin:${PATH}
+
+# ------------------------------------------------------------------------------
+# Define config (runtime) environment variables.
+ENV ORACLE_SID=cdb1                                                            \
+    SYS_PASSWORD="SysPassword1"                                                \
+    PDB_NAME="pdb1"                                                            \
+    PDB_PASSWORD="PdbPassword1"                                                \
+    INSTALL_APEX="true"                                                        \
+    APEX_EMAIL="me@example.com"                                                \
+    APEX_PASSWORD="ApexPassword1"                                              \
+    PIP_SOURCE="https://mirrors.aliyun.com/pypi/simple/"                       \
+    PYTHON_HOME=/opt/python3
 
 # Perform the following actions as the oracle user
 USER oracle
