@@ -12,7 +12,7 @@ The following article provides a description of this Dockerfile.
 这个dockerfile 是我基于 oracle-base(Tim hook) 的[文件](https://github.com/oraclebase/dockerfiles/tree/master/database/ol8_21)修改的，加入了21c的新特性OML4PY的支持  
 [Install OML4Py for On-Premises Databases](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/install-oml4py-premises-databases.html)
 oracle官方的这个文档有些地方说得不对，导致我在部署的时候出现了不少问题，后来我总算弄清楚了应该要怎么部署，  
-为了方便更多的爱好者能试用oml4py，我特意制作了这个dockerfile，使用者用它来自行构建一个包含有支持oml4py的oracle21c数据库的oracle linux8的docker镜像   
+为了方便更多的爱好者能试用oml4py，我特意制作了这个dockerfile，使用者可以用它来自行构建一个包含有支持oml4py的oracle21c数据库的oracle linux8的docker镜像   
 只需要将项目下载到本地后，按照下方目录中，将software需要的文件放进去，  
 然后在此目录执行下面这一条命令即可创建镜像   
 ```
