@@ -64,6 +64,7 @@ $
 
 ## 已知问题
 打pyqatmlcfg.sql这个脚本时会报参数错误，但不影响ORACLE使用PYTHON函数，暂不清楚问题原因
+原dockerfile没有使用多阶段构建，最后出来的镜像大小为19G
 
 ## 有关此dockerfile原作者提供的其他信息
 
