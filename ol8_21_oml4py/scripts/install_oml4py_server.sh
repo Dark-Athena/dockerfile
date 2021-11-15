@@ -29,3 +29,4 @@ pip3.9 install pandas==0.25.3
 pip3.9 install matplotlib==3.1.2
 pip3.9 install scikit-learn==0.23.1
 rm -rf ~/.cache/pip
+pip3.9 cache purge
