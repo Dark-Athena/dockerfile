@@ -17,7 +17,7 @@ docker run -dit --name ol8_21_con -p 1521:1521 -p 5500:5500  --shm-size="1G" ol8
 ```
 或者同时挂载本地目录为数据文件及配置文件目录
 ```
-docker run -dit --name ol8_21_con -p 1521:1521 -p 5500:5500  --shm-size="1G" -v F:\oracle21c4\:/u02 ol8_21_oml4py:latest
+docker run -dit --name ol8_21_con -p 1521:1521 -p 5500:5500  --shm-size="1G" -v F:\oracle21c\:/u02 ol8_21_oml4py:latest
 ```
 
 第一次启动会初始化数据库，需要等几分钟才能进入，可查看日志监控进度   
