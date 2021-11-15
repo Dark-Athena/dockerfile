@@ -69,6 +69,12 @@ $
 打pyqatmlcfg.sql这个脚本时会报参数错误，但不影响ORACLE使用PYTHON函数，暂不清楚问题原因    
 ~~原dockerfile没有使用多阶段构建，最后出来的镜像大小为19G~~已修改为多阶段构建，生成镜像大小约为9.42G，压缩后3.8G
 
+## 成品已上传阿里云
+```
+docker pull registry.cn-shanghai.aliyuncs.com/darkathena/ol8_21_oml4py:2.0
+docker run -dit --name ol8_21_con -p 1521:1521 -p 5500:5500 --shm-size="1G"  registry.cn-shanghai.aliyuncs.com/darkathena/ol8_21_oml4py:2.0
+```
+
 ## 有关此dockerfile原作者提供的其他信息
 
 [Docker : Oracle Database on Docker](https://oracle-base.com/articles/linux/docker-oracle-database-on-docker)
