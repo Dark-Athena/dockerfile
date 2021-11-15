@@ -34,7 +34,7 @@ docker logs --follow ol8_21_con
 
 sys用户的默认登录密码为 SysPassword1   
 
-services_name=cdb1
+services_name=cdb1    
 services_name=pdb1
 
 ## software下载地址
