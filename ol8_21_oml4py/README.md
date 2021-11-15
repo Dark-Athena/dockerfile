@@ -15,7 +15,7 @@ docker build -t ol8_21_oml4py:latest .
 ```
 docker run -dit --name ol8_21_con -p 1521:1521 -p 5500:5500  --shm-size="1G" ol8_21_oml4py:latest
 ```
-或者同时挂载本地目录为数据文件及配置文件目录
+或者同时挂载本地目录为数据文件及配置文件目录(不建议挂载本地目录，因为会导致PDB模式下DBA_DIRECTORIES视图无法访问，且无法安装oml4py)
 ```
 docker run -dit --name ol8_21_con -p 1521:1521 -p 5500:5500  --shm-size="1G" -v F:\oracle21c\:/u02 ol8_21_oml4py:latest
 ```
