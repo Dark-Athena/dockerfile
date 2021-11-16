@@ -149,7 +149,7 @@ RUN mkdir -p /py3-ex                                                        && \
     sh ${SCRIPTS_DIR}/install_oml4py_server.sh                              && \
     rm -rf /py3-ex
 
-FROM oraclelinux:8-slim
+FROM oraclelinux:8
 COPY --from=builder ["/", "/"]
 
 # File Author / Maintainer
