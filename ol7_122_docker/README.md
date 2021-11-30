@@ -2,7 +2,12 @@
 1. 将原始镜像从slim版改成正常版（slim版os指令严重缺失）
 2. 修改为多阶段构建，以节省大小
 
-（我还没测试，数据库安装包正在龟速下载中...）
+已测试构建成功，生成的未压缩镜像大小为8G   
+```
+docker build -t ol7_12:latest .   
+
+docker run -dit --name ol7_12_con -p 1521:1521 -p 5500:5500 --shm-size="1G"  -v F:\oracle12c_u03\:/u03 ol7_12:latest   
+```
 
 以下是原作者提供的信息：   
 
