@@ -9,7 +9,7 @@ The following article provides a description of this Dockerfile.
 [【ORACLE】在ORACLE数据库中启用机器学习功能（OML）以支持PYTHON脚本的运行](https://www.darkathena.top/archives/oml4py-server-setup)  
 [【ORACLE】关于21c版本中机器学习OML4PY功能嵌入式python代码执行的研究整理](https://www.darkathena.top/archives/about-oml4py-part2)  
 
-这个dockerfile 是我基于 oracle-base(Tim hook) 的[文件](https://github.com/oraclebase/dockerfiles/tree/master/database/ol8_21)修改的，加入了21c的新特性OML4PY的支持  
+这个dockerfile 是我基于 oracle-base(Tim Hall) 的[文件](https://github.com/oraclebase/dockerfiles/tree/master/database/ol8_21)修改的，加入了21c的新特性OML4PY的支持  
 [Install OML4Py for On-Premises Databases](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/install-oml4py-premises-databases.html)
 oracle官方的这个文档有些地方说得不对，导致我在部署的时候出现了不少问题，后来我总算弄清楚了应该要怎么部署，  
 为了方便更多的爱好者能试用oml4py，我特意制作了这个dockerfile，使用者可以用它来自行构建一个包含有支持oml4py的oracle21c数据库的oracle linux8的docker镜像   
