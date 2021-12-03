@@ -150,6 +150,7 @@ EOF
   echo "Install oml4py for db." `date`
   echo "******************************************************************************"
   sqlplus / as sysdba <<EOF
+create or replace directory 'DATA_PUMP_DIR' as '/u02/config/cdb1/admin/cdb1/dpdump';/*fix 18c symlink limit*/
 alter session set container=PDB1;
 ALTER PROFILE DEFAULT LIMIT PASSWORD_VERIFY_FUNCTION NULL;
 @$ORACLE_HOME/oml4py/server/pyqcfg.sql SYSAUX TEMP ${PYTHON_HOME};
