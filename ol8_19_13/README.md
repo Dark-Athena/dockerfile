@@ -15,10 +15,10 @@ $ tree
 ├── README.md
 ├── scripts
 │   ├── healthcheck.sh
-    ├── oracle_software_patch.sh
-    ├── dbc_aces.sql
-    ├── dbms_cloud_install.sql
-    ├── install_os_packages.sh
+│   ├── oracle_software_patch.sh
+│   ├── dbc_aces.sql
+│   ├── dbms_cloud_install.sql
+│   ├── install_os_packages.sh
 │   └── start.sh
 └── software
     ├── apex_21.2_en.zip
