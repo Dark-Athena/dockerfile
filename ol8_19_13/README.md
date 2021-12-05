@@ -20,6 +20,9 @@ $ tree
 │   ├── dbms_cloud_install.sql
 │   ├── install_os_packages.sh
 │   └── start.sh
+├── wallet
+│   ├── cwallet.sso
+│   └── ewallet.p12
 └── software
     ├── apex_21.2_en.zip
     ├── LINUX.X64_193000_db_home.zip
