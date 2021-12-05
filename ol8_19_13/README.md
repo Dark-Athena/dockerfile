@@ -4,7 +4,7 @@
 - 增加19.13版本打补丁（请自行下载补丁包,未下载补丁包则为默认的19.3版本，无法安装dbms_cloud） 
 - 预装dbms_cloud包，并已配置好wallet及acl/ace(ORACLECLOUD/AWS/AZURE/京东云OSS/腾讯云COS) 
 - 修改初始镜像为oraclelinux:8  
-- 修改为多阶段构建，最终未压缩大小为10G  
+- 修改为多阶段构建，最终未压缩的docker镜像大小为10.28GB  
 
 # 该版本目录结构为   
 
