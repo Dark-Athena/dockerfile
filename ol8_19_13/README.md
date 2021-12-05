@@ -1,10 +1,12 @@
-# 基于Tim Hall的docker构建脚本修改而来   
+# 预装dbms_cloud的oracle 19.13的docker构建脚本
+
+基于Tim Hall的docker构建脚本修改而来   
 - 增加19.13版本打补丁（请自行下载补丁包,未下载补丁包则为默认的19.3版本，无法安装dbms_cloud） 
 - 预装dbms_cloud包，并已配置好wallet及acl/ace(ORACLECLOUD/AWS/AZURE/京东云OSS/腾讯云COS) 
 - 修改初始镜像为oraclelinux:8  
 - 修改为多阶段构建，最终未压缩大小为10G  
 
-该版本目录结构为   
+# 该版本目录结构为   
 
 ```
 $ tree
@@ -29,18 +31,18 @@ $ tree
 $
 ```
 
-构建及运行命令参考
+# 构建及运行命令参考
 ```
 docker build -t ol8_19_13:latest .
 
 docker run -dit --name ol8_19_13_con -p 1521:1521 -p 5500:5500 --shm-size="1G" ol8_19_13:latest
 ```
-注意事项，容器第一次启动后，数据库会开始创建，需要不少时间，可查看日志跟踪进度
+# 注意事项，容器第一次启动后，数据库会开始创建，需要不少时间，可查看日志跟踪进度
 ```
 docker logs --follow ol8_19_13_con
 ```
 
-
+----------
 以下是原作者提供的其他信息   
 # Oracle Database on Docker
 
