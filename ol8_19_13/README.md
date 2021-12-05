@@ -1,6 +1,6 @@
 # 预装dbms_cloud的oracle 19.13的docker构建脚本
 
-基于Tim Hall的docker构建脚本修改而来   
+基于Tim Hall的[docker构建脚本](https://github.com/oraclebase/dockerfiles/tree/master/database/ol8_19)修改而来   
 - 增加19.13版本打补丁（请自行下载补丁包,未下载补丁包则为默认的19.3版本，无法安装dbms_cloud） 
 - 预装dbms_cloud包，并已配置好wallet及acl/ace(ORACLECLOUD/AWS/AZURE/京东云OSS/腾讯云COS) 
 - 修改初始镜像为oraclelinux:8  
