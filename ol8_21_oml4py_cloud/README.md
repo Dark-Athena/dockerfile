@@ -2,6 +2,7 @@
 在
 https://github.com/Dark-Athena/dockerfile/tree/main/ol8_21_oml4py
 的基础上增加了dbms_cloud的预装，已配置好wallet（ORACLE/AMAZON/MICROSOFT/JD/TENCENT）
+最终未压缩的镜像大小为9.55GB
 
 ## software下载地址
    - Oracle Database
