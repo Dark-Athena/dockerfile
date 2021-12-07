@@ -161,6 +161,8 @@ EOF
 
   sqlplus / as sysdba <<EOF
 @/u01/scripts/dbc_aces.sql
+create or replace directory DATA_PUMP_DIR as '/u02/config/cdb1/admin/cdb1/dpdump';
+/
 exit;
 EOF
 
